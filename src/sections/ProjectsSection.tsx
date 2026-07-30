@@ -91,7 +91,7 @@ function ProjectCard({
         </div>
 
         {/* 图片网格 */}
-        <div className="mt-3 grid max-h-[320px] grid-cols-[40%_60%] grid-rows-[1fr_1fr] gap-2 overflow-hidden sm:mt-4 sm:max-h-[380px] sm:gap-3 md:mt-6 md:max-h-[440px] md:gap-4 lg:max-h-[500px]">
+        <div className="mt-3 grid grid-cols-[40%_60%] grid-rows-[1fr_1fr] gap-2 sm:mt-4 sm:gap-3 md:mt-6 md:gap-4 lg:max-h-[340px] lg:overflow-hidden">
           <img
             src={project.images.col1Top}
             alt=""
