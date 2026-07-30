@@ -65,7 +65,7 @@ function ProjectCard({
   return (
     <div
       ref={containerRef}
-      className="sticky top-24 h-[85vh] md:top-32"
+      className="sticky top-24 h-[100vh] md:top-32"
       style={{ top: `${index * 28}px` }}
     >
       <motion.div
@@ -92,11 +92,11 @@ function ProjectCard({
 
         {/* 图片网格 */}
         <div
-          className="mt-4 grid min-h-0 flex-1 grid-cols-[40%_60%] gap-3 sm:mt-6 sm:gap-4"
-          style={{
-            gridTemplateRows:
-              'minmax(0, clamp(130px, 16vw, 230px)) minmax(0, clamp(160px, 22vw, 340px))',
-          }}
+            className="mt-4 grid min-h-0 flex-1 grid-cols-[40%_60%] gap-3 sm:mt-6 sm:gap-4"
+            style={{
+              gridTemplateRows:
+                'minmax(0, clamp(200px, 28vw, 460px)) minmax(0, clamp(300px, 40vw, 660px))',
+            }}
         >
           <img
             src={project.images.col1Top}
@@ -139,7 +139,7 @@ export default function ProjectsSection() {
       ))}
 
       {/* 底部占位，确保最后一张卡片有足够空间 */}
-      <div className="h-[85vh]" />
+      <div className="h-[100vh]" />
     </section>
   );
 }
