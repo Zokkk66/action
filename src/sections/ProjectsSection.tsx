@@ -65,12 +65,12 @@ function ProjectCard({
   return (
     <div
       ref={containerRef}
-      className="sticky top-24 h-[85vh] md:h-[100vh]"
+      className="sticky top-24 h-auto md:top-32"
       style={{ top: `${index * 28}px` }}
     >
       <motion.div
         style={{ scale }}
-        className="flex h-full flex-col overflow-hidden rounded-[24px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-3 sm:rounded-[40px] sm:p-4 md:rounded-[50px] md:p-6 lg:rounded-[60px] lg:p-8"
+        className="flex flex-col overflow-hidden rounded-[24px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-3 sm:rounded-[40px] sm:p-4 md:rounded-[50px] md:p-6 lg:rounded-[60px] lg:p-8"
       >
         {/* 顶部信息行 */}
         <div className="flex flex-nowrap items-center justify-between gap-3">
@@ -91,13 +91,7 @@ function ProjectCard({
         </div>
 
         {/* 图片网格 */}
-        <div
-            className="mt-3 grid min-h-0 flex-1 grid-cols-[40%_60%] gap-2 sm:mt-4 sm:gap-3 md:mt-6 md:gap-4"
-            style={{
-              gridTemplateRows:
-                'minmax(0, clamp(120px, 26vw, 460px)) minmax(0, clamp(170px, 38vw, 660px))',
-            }}
-        >
+        <div className="mt-3 grid grid-cols-[40%_60%] grid-rows-[1fr_1fr] gap-2 sm:mt-4 sm:gap-3 md:mt-6 md:gap-4">
           <img
             src={project.images.col1Top}
             alt=""
@@ -108,7 +102,7 @@ function ProjectCard({
             src={project.images.col2}
             alt=""
             loading="lazy"
-            className="col-start-2 row-span-2 row-start-1 h-full w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
+            className="col-start-2 row-span-2 row-start-1 h-full w-full rounded-[24px] object-cover sm:rounded-[40px] md:rounded-[50px] lg:rounded-[60px]"
           />
           <img
             src={project.images.col1Bottom}
@@ -139,7 +133,7 @@ export default function ProjectsSection() {
       ))}
 
       {/* 底部占位，确保最后一张卡片有足够空间 */}
-      <div className="h-[85vh] md:h-[100vh]" />
+      <div className="h-[50vh] md:h-[60vh]" />
     </section>
   );
 }
