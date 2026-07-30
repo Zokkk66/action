@@ -70,54 +70,52 @@ function ProjectCard({
     >
       <motion.div
         style={{ scale }}
-        className="h-full rounded-[40px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
+        className="flex h-full flex-col overflow-hidden rounded-[40px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
       >
-        <div className="flex h-full flex-col gap-4 sm:gap-6">
-          {/* 顶部信息行 */}
-          <div className="flex flex-wrap items-center gap-4">
-            <span className="text-[clamp(3rem,10vw,140px)] font-black leading-none text-[#D7E2EA]">
-              {project.num}
+        {/* 顶部信息行 */}
+        <div className="flex flex-wrap items-center gap-4">
+          <span className="text-[clamp(3rem,10vw,140px)] font-black leading-none text-[#D7E2EA]">
+            {project.num}
+          </span>
+          <div className="flex flex-col">
+            <span className="text-[clamp(0.85rem,1.6vw,1.25rem)] font-light uppercase text-[#D7E2EA]/60">
+              {project.category}
             </span>
-            <div className="flex flex-col">
-              <span className="text-[clamp(0.85rem,1.6vw,1.25rem)] font-light uppercase text-[#D7E2EA]/60">
-                {project.category}
-              </span>
-              <h3 className="text-[clamp(1rem,2.2vw,2.1rem)] font-medium uppercase text-white">
-                {project.name}
-              </h3>
-            </div>
-            <div className="ml-auto">
-              <LiveProjectButton />
-            </div>
+            <h3 className="text-[clamp(1rem,2.2vw,2.1rem)] font-medium uppercase text-white">
+              {project.name}
+            </h3>
           </div>
+          <div className="ml-auto">
+            <LiveProjectButton />
+          </div>
+        </div>
 
-          {/* 图片网格 */}
-          <div className="flex flex-1 gap-3 sm:gap-4">
-            {/* 左列 (40%) */}
-            <div className="flex w-[40%] flex-col gap-3 sm:gap-4">
-              <img
-                src={project.images.col1Top}
-                alt=""
-                loading="lazy"
-                className="h-[clamp(130px,16vw,230px)] w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-              />
-              <img
-                src={project.images.col1Bottom}
-                alt=""
-                loading="lazy"
-                className="h-[clamp(160px,22vw,340px)] w-full flex-1 rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-              />
-            </div>
-            {/* 右列 (60%) */}
-            <div className="w-[60%]">
-              <img
-                src={project.images.col2}
-                alt=""
-                loading="lazy"
-                className="h-full w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-              />
-            </div>
-          </div>
+        {/* 图片网格 */}
+        <div
+          className="mt-4 grid min-h-0 flex-1 grid-cols-[40%_60%] gap-3 sm:mt-6 sm:gap-4"
+          style={{
+            gridTemplateRows:
+              'minmax(0, clamp(130px, 16vw, 230px)) minmax(0, clamp(160px, 22vw, 340px))',
+          }}
+        >
+          <img
+            src={project.images.col1Top}
+            alt=""
+            loading="lazy"
+            className="h-full w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
+          />
+          <img
+            src={project.images.col2}
+            alt=""
+            loading="lazy"
+            className="col-start-2 row-span-2 row-start-1 h-full w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
+          />
+          <img
+            src={project.images.col1Bottom}
+            alt=""
+            loading="lazy"
+            className="h-full w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
+          />
         </div>
       </motion.div>
     </div>
