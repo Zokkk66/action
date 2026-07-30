@@ -65,12 +65,12 @@ function ProjectCard({
   return (
     <div
       ref={containerRef}
-      className="sticky top-24 h-[80vh] md:top-32 md:h-[86vh] lg:h-[90vh]"
+      className="sticky top-24 h-auto md:top-32"
       style={{ top: `${index * 28}px` }}
     >
       <motion.div
         style={{ scale }}
-        className="flex h-full flex-col overflow-hidden rounded-[24px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-3 sm:rounded-[40px] sm:p-4 md:rounded-[50px] md:p-6 lg:rounded-[60px] lg:p-8"
+        className="flex flex-col overflow-hidden rounded-[24px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-3 sm:rounded-[40px] sm:p-4 md:rounded-[50px] md:p-6 lg:rounded-[60px] lg:p-8"
       >
         {/* 顶部信息行 */}
         <div className="flex flex-nowrap items-center justify-between gap-3">
@@ -91,7 +91,7 @@ function ProjectCard({
         </div>
 
         {/* 图片网格 */}
-        <div className="mt-3 grid h-full min-h-0 flex-1 grid-cols-[40%_60%] grid-rows-[1fr_1fr] gap-2 sm:mt-4 sm:gap-3 md:mt-6 md:gap-4">
+        <div className="mt-3 grid grid-cols-[40%_60%] grid-rows-[1fr_1fr] gap-2 sm:mt-4 sm:gap-3 md:mt-6 md:gap-4">
           <img
             src={project.images.col1Top}
             alt=""
@@ -133,7 +133,7 @@ export default function ProjectsSection() {
       ))}
 
       {/* 底部占位，确保最后一张卡片有足够空间 */}
-      <div className="h-[80vh] md:h-[86vh] lg:h-[90vh]" />
+      <div className="h-[50vh] md:h-[60vh]" />
     </section>
   );
 }
