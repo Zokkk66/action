@@ -65,44 +65,44 @@ function ProjectCard({
   return (
     <div
       ref={containerRef}
-      className="sticky top-24 h-[100vh] md:top-32"
+      className="sticky top-24 h-[85vh] md:h-[100vh]"
       style={{ top: `${index * 28}px` }}
     >
       <motion.div
         style={{ scale }}
-        className="flex h-full flex-col overflow-hidden rounded-[40px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
+        className="flex h-full flex-col overflow-hidden rounded-[24px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-3 sm:rounded-[40px] sm:p-4 md:rounded-[50px] md:p-6 lg:rounded-[60px] lg:p-8"
       >
         {/* 顶部信息行 */}
-        <div className="flex flex-wrap items-center gap-4">
-          <span className="text-[clamp(3rem,10vw,140px)] font-black leading-none text-[#D7E2EA]">
-            {project.num}
-          </span>
-          <div className="flex flex-col">
-            <span className="text-[clamp(0.85rem,1.6vw,1.25rem)] font-light uppercase text-[#D7E2EA]/60">
-              {project.category}
+        <div className="flex flex-nowrap items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <span className="text-[clamp(2.25rem,8vw,140px)] font-black leading-none text-[#D7E2EA] sm:text-[clamp(3rem,10vw,140px)]">
+              {project.num}
             </span>
-            <h3 className="text-[clamp(1rem,2.2vw,2.1rem)] font-medium uppercase text-white">
-              {project.name}
-            </h3>
+            <div className="flex flex-col">
+              <span className="text-[clamp(0.75rem,1.4vw,1.25rem)] font-light uppercase text-[#D7E2EA]/60 sm:text-[clamp(0.85rem,1.6vw,1.25rem)]">
+                {project.category}
+              </span>
+              <h3 className="text-[clamp(0.9rem,2vw,2.1rem)] font-medium uppercase text-white sm:text-[clamp(1rem,2.2vw,2.1rem)]">
+                {project.name}
+              </h3>
+            </div>
           </div>
-          <div className="ml-auto">
-            <LiveProjectButton />
-          </div>
+          <LiveProjectButton />
         </div>
 
         {/* 图片网格 */}
         <div
-            className="mt-4 grid min-h-0 flex-1 grid-cols-[40%_60%] gap-3 sm:mt-6 sm:gap-4"
+            className="mt-3 grid min-h-0 flex-1 grid-cols-[40%_60%] gap-2 sm:mt-4 sm:gap-3 md:mt-6 md:gap-4"
             style={{
               gridTemplateRows:
-                'minmax(0, clamp(200px, 28vw, 460px)) minmax(0, clamp(300px, 40vw, 660px))',
+                'minmax(0, clamp(120px, 26vw, 460px)) minmax(0, clamp(170px, 38vw, 660px))',
             }}
         >
           <img
             src={project.images.col1Top}
             alt=""
             loading="lazy"
-            className="h-full w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
+            className="h-full w-full rounded-[24px] object-cover sm:rounded-[40px] md:rounded-[50px] lg:rounded-[60px]"
           />
           <img
             src={project.images.col2}
@@ -114,7 +114,7 @@ function ProjectCard({
             src={project.images.col1Bottom}
             alt=""
             loading="lazy"
-            className="h-full w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
+            className="h-full w-full rounded-[24px] object-cover sm:rounded-[40px] md:rounded-[50px] lg:rounded-[60px]"
           />
         </div>
       </motion.div>
@@ -139,7 +139,7 @@ export default function ProjectsSection() {
       ))}
 
       {/* 底部占位，确保最后一张卡片有足够空间 */}
-      <div className="h-[100vh]" />
+      <div className="h-[85vh] md:h-[100vh]" />
     </section>
   );
 }
